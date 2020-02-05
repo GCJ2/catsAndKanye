@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import {Route, Link} from 'react-router-dom'
+import Welcome from "./components/Welcome/Welcome";
+import LazyMode from "./components/LazyMode/LazyMode";
 import './App.css';
+import MainView from "./components/MainView/MainView";
+import axios from "axios";
 
 function App() {
+  const [quotes, setQuotes] = useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/*<Welcome selection={selection} setSelection={setSelection}/>*/}
+      <Route exact path = '/'
+             render={(props) => <LazyMode {...props} setQuotes={setQuotes} quotes={quotes}/>}/>
+             {/*<Route exact path = '/'*/}
+             {/*render={(props) => <Welcome {...props} setQuotes={setQuotes} quotes={quotes}/>}/>*/}
+      {/*<Route exact path = '/mainview'*/}
+      {/*       render={(props) => <MainView {...props} quotes={quotes} />}/>*/}
     </div>
   );
 }
