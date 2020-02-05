@@ -58,6 +58,7 @@ const LazyMode = ({quotes}) => {
   return (
     <div>
       <h1>Cats and Kanye</h1>
+      <p>Pictures of cats with quotes from Ye.</p>
       <Card catURL={catURL} quote={kanyeQuote}/>
       <Footer anotherOne={anotherOne}/>
     </div>
