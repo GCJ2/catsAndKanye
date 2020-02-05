@@ -3,7 +3,7 @@ import './Footer.scss'
 
 const Footer = ({anotherOne}) => {
   return (
-    <div>
+    <div className='footer'>
       <button className='another-one-button' onClick={anotherOne}>ANOTHER ONE</button>
     </div>
   );
