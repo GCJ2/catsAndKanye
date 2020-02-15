@@ -13,9 +13,11 @@ const LazyMode = ({quotes}) => {
   const [quote, setQuote] = useState('');
 
   const getCatPhoto = () => {
-    axios.get('https://aws.random.cat/meow')
+    // axios.get('https://aws.random.cat/meow')
+    axios.get('https://api.thecatapi.com/v1/images/search')
       .then(res => {
-        setCatURL(res.data.file)
+        console.log(res.data[0].url);
+        setCatURL(res.data[0].url)
       })
   };
 
@@ -29,7 +31,7 @@ const LazyMode = ({quotes}) => {
 
   const getCatFacts = () => {
     axios.get('https://catfact.ninja/fact')
-      .then (res => {
+      .then(res => {
         console.log(res.data.fact);
         setCatFact(res.data.fact);
       })
@@ -37,14 +39,14 @@ const LazyMode = ({quotes}) => {
 
   useEffect(() => {
     getCatPhoto();
-    getCatFacts();
+    // getCatFacts();
     getKanye();
-  },[]);
+  }, []);
 
   const anotherOne = (e) => {
     e.preventDefault();
     getCatPhoto();
-    getCatFacts();
+    // getCatFacts();
     getKanye();
   };
 
