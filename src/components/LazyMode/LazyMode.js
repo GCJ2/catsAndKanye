@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'
-import Header from "../Header/Header";
+// import Header from "../Header/Header";
 import Card from "../Card/Card";
 import Footer from "../Footer/Footer";
 
@@ -9,8 +9,8 @@ const LazyMode = ({quotes}) => {
 
   const [catURL, setCatURL] = useState('');
   const [kanyeQuote, setKanyeQuote] = useState('');
-  const [catFact, setCatFact] = useState('');
-  const [quote, setQuote] = useState('');
+  // const [catFact, setCatFact] = useState('');
+  // const [quote, setQuote] = useState('');
 
   const getCatPhoto = () => {
     // axios.get('https://aws.random.cat/meow')
@@ -29,13 +29,13 @@ const LazyMode = ({quotes}) => {
       })
   };
 
-  const getCatFacts = () => {
-    axios.get('https://catfact.ninja/fact')
-      .then(res => {
-        console.log(res.data.fact);
-        setCatFact(res.data.fact);
-      })
-  };
+  // const getCatFacts = () => {
+  //   axios.get('https://catfact.ninja/fact')
+  //     .then(res => {
+  //       console.log(res.data.fact);
+  //       setCatFact(res.data.fact);
+  //     })
+  // };
 
   useEffect(() => {
     getCatPhoto();

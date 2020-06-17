@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {Route, Link} from 'react-router-dom'
-import Welcome from "./components/Welcome/Welcome";
+import {Route} from 'react-router-dom'
+// import Welcome from "./components/Welcome/Welcome";
 import LazyMode from "./components/LazyMode/LazyMode";
 import './App.css';
-import MainView from "./components/MainView/MainView";
-import axios from "axios";
+// import MainView from "./components/MainView/MainView";
+// import axios from "axios";
 
 function App() {
   const [quotes, setQuotes] = useState('');

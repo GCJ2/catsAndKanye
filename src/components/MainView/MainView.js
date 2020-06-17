@@ -9,8 +9,8 @@ const MainView = ({quotes}) => {
 
   const [catURL, setCatURL] = useState('');
   const [kanyeQuote, setKanyeQuote] = useState('');
-  const [catFact, setCatFact] = useState('');
-  const [quote, setQuote] = useState('');
+  // const [catFact, setCatFact] = useState('');
+  // const [quote, setQuote] = useState('');
 
   const getCatPhoto = () => {
     axios.get('https://aws.random.cat/meow')
@@ -26,25 +26,25 @@ const MainView = ({quotes}) => {
         setKanyeQuote(res.data.quote);
       })
   };
-
-  const getCatFacts = () => {
-    axios.get('https://catfact.ninja/fact')
-      .then (res => {
-        console.log(res.data.fact);
-        setCatFact(res.data.fact);
-      })
-  };
+  //
+  // const getCatFacts = () => {
+  //   axios.get('https://catfact.ninja/fact')
+  //     .then (res => {
+  //       console.log(res.data.fact);
+  //       setCatFact(res.data.fact);
+  //     })
+  // };
 
  useEffect(() => {
     getCatPhoto();
-    getCatFacts();
+    // getCatFacts();
     getKanye();
   },[]);
 
   const anotherOne = (e) => {
     e.preventDefault();
     getCatPhoto();
-    getCatFacts();
+    // getCatFacts();
     getKanye();
   };
 
