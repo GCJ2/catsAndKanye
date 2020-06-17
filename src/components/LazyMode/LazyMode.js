@@ -24,7 +24,7 @@ const LazyMode = ({quotes}) => {
   const getKanye = () => {
     axios.get('https://api.kanye.rest/')
       .then(res => {
-        console.log(res.data.quote);
+        // console.log(res.data.quote);
         setKanyeQuote(res.data.quote);
       })
   };
